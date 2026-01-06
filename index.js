@@ -12,6 +12,11 @@ const app = express();
 const PORT = 3000;
 app.use(cors());
 app.use(express.json()); 
+app.get("/", async (req, res) => {
+  const snapshot = await db.collection("users").get();
+  const users = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  res.json(users);
+});
 app.post("/api/users", async (req, res) => {
   try {
     const userData = req.body;
@@ -62,3 +67,4 @@ app.listen(PORT, () => {
   console.log("🔥 Connected to Firebase Firestore.");
 
 });
+
