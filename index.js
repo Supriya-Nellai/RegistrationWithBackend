@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const admin = require("firebase-admin");
 const path = require("path");
-const serviceAccount = require("/etc/secrets/firebase-service-account.json");
+const serviceAccount = require("/etc/secrets/serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -60,4 +60,5 @@ app.delete("/api/users/:id", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log("🔥 Connected to Firebase Firestore.");
+
 });
