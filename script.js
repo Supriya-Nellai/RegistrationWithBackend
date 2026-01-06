@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://registrationwithbackend-ika4.onrender.com/users"; 
+const API_BASE_URL = "https://registrationwithbackend-ika4.onrender.com/api/users"; 
 const openRegisterBtn = document.getElementById("open-register");
 const registerPopup = document.getElementById("register-popup");
 const closeBtn = document.getElementById("close");
@@ -259,5 +259,6 @@ if (document.getElementById("usersBody")) {
     window.addEventListener("DOMContentLoaded", fetchUsers);
 
 }
+
 
 
